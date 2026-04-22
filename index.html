@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Lookup Demo</title>
+</head>
+<body style="font-family:sans-serif; text-align:center; margin-top:100px;">
+
+  <h2>User Information Lookup</h2>
+  
+  <input type="text" id="icInput" placeholder="Enter your IC number">
+  <button onclick="lookup()">Submit</button>
+
+  <p id="result" style="margin-top:20px; font-weight:bold;"></p>
+
+  <script>
+    // Dummy database (safe for demo only)
+    const users = {
+      "010203-10-1234": "Kuala Lumpur, Malaysia",
+      "990101-14-5678": "Johor Bahru, Malaysia"
+    };
+
+    function lookup() {
+      const ic = document.getElementById("icInput").value;
+      const result = document.getElementById("result");
+
+      if (users[ic]) {
+        result.innerText = "Address: " + users[ic];
+      } else {
+        result.innerText = "No record found.";
+      }
+    }
+  </script>
+
+</body>
+</html>
